@@ -26,6 +26,15 @@ section {
   background: linear-gradient(to bottom, #af67e9, #6565e7);
 }
 
+section .card::before {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  content: url("/images/illustration-box-desktop.svg");
+  left: 100px;
+  top: 43%;
+}
+
 section .card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,9 +48,22 @@ section .card {
 
 section .card .left {
   width: 50%;
-  background-image: url("/images/illustration-woman-online-desktop.svg");
-  background-size: cover;
-  background-position: center;
+  background-image: url("/images/bg-pattern-desktop.svg");
+  background-size: 800px;
+  background-repeat: no-repeat;
+  background-position: -448px -220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .card .left img {
+  position: relative;
+  width: 400px;
+  left: -12%;
 }
 
 section .card .right {
