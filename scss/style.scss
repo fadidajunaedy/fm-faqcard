@@ -36,6 +36,7 @@ section {
         background-color: white;
         overflow: hidden;
         border-radius: 24px;
+
         .left {
             width: 50%;
             background-image: url('/images/bg-pattern-desktop.svg');
@@ -53,7 +54,78 @@ section {
         }
 
         .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 50%;
+            padding: 15% 5%;
+
+            h1 {
+                font-size: 32px;
+                color: $veryDarkDesaturatedBlue;
+            }
+
+            .accordion {
+                width: auto;
+                height: auto;
+
+                .contentBox {
+                    position: relative;
+                    margin: 12px 0px;
+
+                    .label {
+                        position: relative;
+                        padding: 10px 0;
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: $veryDarkDesaturatedBlue;
+
+                        &::after {
+                            content: url('/images/icon-arrow-down.svg');
+                            position: absolute;
+                            top: 6px;
+                            right: 20px;
+                            transform: translateY(-50%);
+                            font-size: 48px;
+                            transition: 0.5 ease-in-out;
+                        }
+                    }
+
+                    .content {
+                        position: relative;
+                        height: 0;
+                        overflow: hidden;
+                        transition: 0.5s ease-in-out;
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: $darkGrayishBlue;
+                    }
+                }
+
+                hr {
+                    height: 0; 
+                    border: 0; 
+                    border-top: 1px solid $lightGrayishBlue; 
+                }
+
+                .contentBox.active {
+                    .content {
+                        height: 48px;
+                    }
+
+                    .label {
+                        &::after {
+                            rotate: 180deg;
+                            transform: translateY(0%);
+                        }
+                    }
+                }
+
+            }
+
+
+
             
         }
     }
